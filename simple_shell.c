@@ -11,6 +11,7 @@ int main(int ac, char **av)
 {
 	char *str_captured = NULL;
 	char **inputs;
+	int status;
 
 	while (1)
 	{
@@ -26,11 +27,11 @@ int main(int ac, char **av)
 		inputs = tokens(str_captured, inputs, _strlen(str_captured));
 
 		if (_strcmp(inputs[0], "exit") == 0)
-			end(inputs, str_captured, av, ac);
+			end(inputs, str_captured, av, ac, status);
 		else
-			execution(inputs, av, ac);
+			status = execution(inputs, av, ac);
 		ac++;
 		_free(inputs, str_captured);
 	}
-	return  (0);
+	return  (status);
 }

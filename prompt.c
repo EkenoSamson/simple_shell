@@ -9,7 +9,7 @@ void prompt_dis(void)
 {
 	char *prompt = "$ ";
 
-	if (isatty(STDOUT_FILENO))
+	if (isatty(0))
 	{
 		if (write(STDOUT_FILENO, prompt, 2) == -1)
 		{

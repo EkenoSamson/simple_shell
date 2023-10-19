@@ -8,11 +8,10 @@
  * @ac: information count.
  */
 
-void end(char **inputs, char *str, char **av, int ac)
+void end(char **inputs, char *str, char **av, int ac, int status)
 {
 	char *error = "illegal number", *ac_c = int_to_str(ac), *colon = ": ";
 	char n_l = '\n';
-	int status = 0;
 
 	if (inputs[1] != NULL)
 	{
@@ -20,16 +19,16 @@ void end(char **inputs, char *str, char **av, int ac)
 
 		if (status == -1)
 		{
-			write(1, av[0], _strlen(av[0]));
-			write(1, colon, 2);
-			write(1, ac_c, _strlen(ac_c));
-			write(1, colon, 2);
-			write(1, inputs[0], _strlen(inputs[0]));
-			write(1, colon, 2);
-			write(1, error, _strlen(error));
-			write(1, colon, 2);
-			write(1, inputs[1], _strlen(inputs[1]));
-			write(1, &n_l, 1);
+			write(2, av[0], _strlen(av[0]));
+			write(2, colon, 2);
+			write(2, ac_c, _strlen(ac_c));
+			write(2, colon, 2);
+			write(2, inputs[0], _strlen(inputs[0]));
+			write(2, colon, 2);
+			write(2, error, _strlen(error));
+			write(2, colon, 2);
+			write(2, inputs[1], _strlen(inputs[1]));
+			write(2, &n_l, 1);
 			free(ac_c);
 		}
 		else
@@ -43,6 +42,6 @@ void end(char **inputs, char *str, char **av, int ac)
 	{
 		free(ac_c);
 		_free(inputs, str);
-		exit(status);
+		exit(EXIT_SUCCESS);
 	}
 }

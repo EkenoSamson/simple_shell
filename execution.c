@@ -26,17 +26,18 @@ int execution(char *inputs[], char **av, int ac)
 			free(full_path);
 		}
 		free(ac_s);
+		return (0);
 	}
 	else
 	{
-		write(1, av[0], _strlen(av[0]));
-		write(1, colon, _strlen(colon));
-		write(1, ac_s, _strlen(ac_s));
-		write(1, colon, _strlen(colon));
-		write(1, inputs[0], _strlen(inputs[0]));
-		write(1, colon, _strlen(colon));
-		write(1, error, _strlen(error));
+		write(2, av[0], _strlen(av[0]));
+		write(2, colon, _strlen(colon));
+		write(2, ac_s, _strlen(ac_s));
+		write(2, colon, _strlen(colon));
+		write(2, inputs[0], _strlen(inputs[0]));
+		write(2, colon, _strlen(colon));
+		write(2, error, _strlen(error));
 		free(ac_s);
+		return (127);
 	}
-	return (0);
 }
