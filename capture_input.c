@@ -3,10 +3,11 @@
 /**
  * capture - capture user input.
  * @str: the buffer to store the string.
+ * @status: current status.
  * Return: user input string.
  */
 
-char *capture(char *str)
+char *capture(char *str, int status)
 {
 	size_t n = 0;
 	ssize_t no_char_r = getline(&str, &n, stdin);
@@ -16,7 +17,7 @@ char *capture(char *str)
 		if (feof(stdin))
 		{
 			free(str);
-			exit(EXIT_SUCCESS);
+			exit(status);
 		}
 		free(str);
 		perror("Error");

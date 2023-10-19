@@ -26,6 +26,7 @@ int execute(char *path, char *av[])
 			perror("Error ");
 			exit(EXIT_FAILURE);
 		}
+		return (errno);
 	}
 	else
 		wait(&waiter);

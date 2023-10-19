@@ -16,7 +16,7 @@ int main(int ac, char **av)
 	while (1)
 	{
 		prompt_dis();
-		str_captured = capture(str_captured);
+		str_captured = capture(str_captured, status);
 
 		if (are_all_spaces(str_captured))
 		{

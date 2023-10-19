@@ -6,6 +6,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <errno.h>
 #include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -18,7 +19,7 @@
 void prompt_dis(void);
 char **tokens(char *str, char *av[], size_t n);
 int execute(char *path, char *av[]);
-char *capture(char *str);
+char *capture(char *str, int status);
 char *_which(char *av);
 int execution(char *inputs[], char **av, int ac);
 void end(char **inputs, char *str, char **av, int ac, int status);
@@ -34,5 +35,6 @@ bool are_all_spaces(const char *str);
 /****** Global variables ****/
 
 extern char **environ;
+extern int errno;
 
 #endif /* SHELL_H */

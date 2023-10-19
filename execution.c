@@ -15,18 +15,19 @@ int execution(char *inputs[], char **av, int ac)
 	char *ac_s = int_to_str(ac);
 	char *command_copy = inputs[0];
 	char *full_path = _which(command_copy);
+	int status;
 
 	if (full_path != NULL)
 	{
 		if (_strcmp(full_path, inputs[0]) == 0)
-			execute(full_path, inputs);
+			status = execute(full_path, inputs);
 		else
 		{
-			execute(full_path, inputs);
+			status = execute(full_path, inputs);
 			free(full_path);
 		}
 		free(ac_s);
-		return (0);
+		return (status);
 	}
 	else
 	{
