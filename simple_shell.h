@@ -8,6 +8,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdbool.h>
+#include <ctype.h>
 #include <sys/wait.h>
 #include <sys/fcntl.h>
 
@@ -27,6 +29,7 @@ char *_strcpy(char *dest, char *src);
 char *_strcat(char *dest, char *src);
 int _strcmp(char *str1, char *str2);
 char *int_to_str(int num);
+bool are_all_spaces(const char *str);
 
 /****** Global variables ****/
 

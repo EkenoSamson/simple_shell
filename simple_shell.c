@@ -16,6 +16,12 @@ int main(int ac, char **av)
 	{
 		prompt_dis();
 		str_captured = capture(str_captured);
+
+		if (are_all_spaces(str_captured))
+		{
+			free(str_captured);
+			continue;
+		}
 		inputs = malloc(sizeof(char *) * 1024);
 		inputs = tokens(str_captured, inputs, _strlen(str_captured));
 
