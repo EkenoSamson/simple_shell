@@ -6,6 +6,7 @@
  * @str: untokenized inputs.
  * @av: program information.
  * @ac: information count.
+ * @status: exit status.
  */
 
 void end(char **inputs, char *str, char **av, int ac, int status)
