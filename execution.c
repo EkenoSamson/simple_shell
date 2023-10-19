@@ -26,7 +26,6 @@ int execution(char *inputs[], char **av, int ac)
 			free(full_path);
 		}
 		free(ac_s);
-		return (0);
 	}
 	else
 	{
@@ -38,6 +37,6 @@ int execution(char *inputs[], char **av, int ac)
 		write(1, colon, _strlen(colon));
 		write(1, error, _strlen(error));
 		free(ac_s);
-		return (127);
 	}
+	return (0);
 }
