@@ -10,7 +10,7 @@
 int execute(char *path, char *av[])
 {
 	pid_t processor;
-	int waiter;
+	int waiter, status;
 
 	processor = fork();
 
@@ -26,10 +26,13 @@ int execute(char *path, char *av[])
 			perror("Error ");
 			exit(EXIT_FAILURE);
 		}
-		return (errno);
 	}
 	else
+	{
 		wait(&waiter);
-	return (0);
+		if (WIFEXITED(waiter))
+			status = WEXITSTATUS(waiter);
+	}
+	return (status);
 }
 

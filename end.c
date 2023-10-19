@@ -43,6 +43,6 @@ void end(char **inputs, char *str, char **av, int ac, int status)
 	{
 		free(ac_c);
 		_free(inputs, str);
-		exit(EXIT_SUCCESS);
+		exit(status);
 	}
 }
