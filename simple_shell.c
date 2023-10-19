@@ -18,16 +18,10 @@ int main(int ac, char **av)
 		prompt_dis();
 		str_captured = capture(str_captured);
 
-		if (!str_captured)
+		if (str_captured == NULL)
 		{
-			write(STDOUT_FILENO, "\n", 1);
+		/*	write(1, "\n", 1); */
 			break;
-		}
-
-		if (_strcmp(str_captured, "\n") == 0)
-		{
-			free(str_captured);
-			continue;
 		}
 		inputs = malloc(sizeof(char *) * 1024);
 		inputs = tokens(str_captured, inputs, _strlen(str_captured));
@@ -41,4 +35,3 @@ int main(int ac, char **av)
 	}
 	return (status);
 }
-

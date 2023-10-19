@@ -16,6 +16,7 @@ char *capture(char *str)
 		if (feof(stdin))
 		{
 			free(str);
+/*			exit(EXIT_SUCCESS); */
 			return (NULL);
 		}
 		free(str);
