@@ -22,7 +22,7 @@ int execute(char *path, char *av[]);
 char *capture(char *str, int status);
 char *_which(char *av);
 int execution(char *inputs[], char **av, int ac);
-void end(char **inputs, char *str, char **av, int ac, int status);
+int  end(char **inputs, char *str, char **av, int ac, int status);
 void _free(char **inputs, char *str);
 size_t _strlen(char *str);
 int str_to_int(char *str);
