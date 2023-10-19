@@ -11,7 +11,7 @@ int main(int ac, char **av)
 {
 	char *str_captured = NULL;
 	char **inputs;
-	int status;
+	int status = 0;
 
 	while (1)
 	{
