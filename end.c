@@ -12,7 +12,7 @@
 
 int end(char **inputs, char *str, char **av, int ac, int status)
 {
-	char *error = "illegal number", *ac_c = int_to_str(ac), *colon = ": ";
+	char *error = "Illegal number", *ac_c = int_to_str(ac), *colon = ": ";
 	char n_l = '\n';
 
 	if (inputs[1] != NULL)
